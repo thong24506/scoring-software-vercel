@@ -4,8 +4,8 @@ const express = require('express');
 const handlebars = require('express-handlebars').engine;
 const morgan = require('morgan');
 const methodOverride = require('method-override');
-const routes = require('./routes');
-const db = require('./config/db');
+const routes = require('./src/routes');
+const db = require('./src/config/db');
 const { stringify } = require('querystring');
 const app = express();
 
@@ -13,7 +13,7 @@ const app = express();
 db.connect();
 
 // Static file
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'src', 'public')));
 
 // Express middleware
 app.use(
@@ -44,7 +44,7 @@ app.engine('hbs', handlebars({
 
 }));
 app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, 'resources', 'views'));
+app.set('views', path.join(__dirname, 'src', 'resources', 'views'));
 
 // Route init
 routes(app);
