@@ -1,0 +1,44 @@
+<header class="header">
+    <nav class="navigation-1">
+        <ul class="menu">
+            <li class="item">
+                <a class="home-page-link" href="/home/{{user.userId}}">Trang chủ</a>
+            </li>
+            <li class="item">
+                <a class="create-page-link" href="/point/create/{{user.userId}}">Thêm môn học</a>
+            </li>
+            <li class="item">
+                <a class="me-page-link" href="/me/show/{{user.userId}}">Chỉnh sửa điểm</a>
+            </li>
+        </ul>
+    </nav>
+    <h1 class="heading">Quản Lý Điểm</h1>
+    <nav class="navigation-2">
+        <div class="user">
+            <img class="user-logo" src="/img/logo_name.png" alt="logo_user">
+            <h3 class="user-name">{{user.name}}</h3>
+            <i class="fa-sharp fa-solid fa-caret-down"></i>
+            <ul class="menu">
+                <li class="item">
+                    <a href="" id="logout" data-userId="{{user.userId}}">Đăng xuất</a>
+                </li>
+            </ul>
+        </div>
+    </nav>  
+</header>
+
+<form method="POST" id="form-logout">
+
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const btnLogout = document.getElementById('logout');        
+        const formLogout = document.getElementById('form-logout');        
+        btnLogout.onclick = function(e) {
+            e.preventDefault();
+            formLogout.action = '/logout/' + btnLogout.getAttribute('data-userId') + '?_method=PATCH';
+            formLogout.submit();
+        }
+    })
+</script>

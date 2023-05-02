@@ -1,0 +1,40 @@
+{{>header}}
+<main class="me">
+    <form method="POST" id="form-edit" action="/point/{{subject._id}}/{{user.userId}}?_method=PUT">
+        <div class="form-group form-group-HK">
+            <label for="HK">Học kỳ:</label>
+            <input type="number" value="{{index}}" class="form-control HK" id="HK" name="HK" spellcheck="false" required="true">
+            <p class="form-control">{{index}}</p>
+        </div>
+        <div class="form-group">
+            <label for="MMH">Mã Môn Học:</label>
+            <input type="text" value="{{subject.MMH}}" class="form-control" id="MMH" name="MMH" spellcheck="false" required="true">
+        </div>
+        <div class="form-group">
+            <label for="TMH">Tên môn học:</label>
+            <input type="text" value="{{subject.TMH}}" class="form-control" id="TMH" name="TMH" spellcheck="false" required="true">
+        </div>
+        <div class="form-group">
+            <label for="TC">Số tín chỉ:</label>
+            <input type="number" value="{{subject.TC}}" class="form-control" id="TC" name="TC" spellcheck="false" required="true">
+        </div>
+        <div class="form-group">
+            <label for="KT">Hệ số điểm quá trình:</label>
+            <input type="number" value="{{subject.KT}}" class="form-control" id="KT" name="KT" spellcheck="false" required="true">
+        </div>
+        <div class="form-group">
+            <label for="THI">Hệ số điểm kết thúc học phần:</label><br>
+            <input type="number" value="{{subject.THI}}" class="form-control" id="THI" name="THI" spellcheck="false" required="true">
+        </div>
+        <div class="form-group">
+            <label for="KTRA">Điểm quá trình:</label><br>
+            <input type="number" value="{{subject.KTRA}}" class="form-control" id="KTRA" name="KTRA" spellcheck="false" required="true">
+        </div>
+        <div class="form-group">
+            <label for="THIL1">Điểm kết thúc học phần:</label><br>
+            <input type="number" value="{{subject.THIL1}}" class="form-control" id="THIL1" name="THIL1" spellcheck="false" required="true">
+        </div>
+        <button class="form-submit" type="submit">Lưu</button>
+    </form>
+</main>
+{{>footer}}

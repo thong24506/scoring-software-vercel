@@ -1,0 +1,47 @@
+
+.modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    .board {
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: var(--sub-color);
+        padding: 20px;
+        border-radius: 4px;
+        .board-item-msg {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            text-align:center;
+        }
+        .board-item-btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .board-btn-delete {
+                flex: 1;
+                margin-right: 20px;
+                padding: 8px 0;
+                border-radius: 4px;
+                background-color: rgb(190, 39, 39);
+                font-size: 1.6rem;
+            }
+            .board-btn-exit {
+                flex: 1;
+                padding: 8px 0;
+                border-radius: 4px;
+                background-color: var(--border-color);
+                font-size: 1.6rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.create {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    form { 
+        background-color: var(--primary-color);
+        border-radius: 4px;
+        padding: 30px;
+        .form-group {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 1.6rem;
+            .form-control {
+                flex: 1;
+                margin-left: 16px;
+                padding: 2px 4px;
+                border: none;
+                outline: none;
+                background-color: var(--primary-color);
+                border-bottom: 1px solid var(--black-color);
+                font-size: 1.6rem;
+            }
+        }
+        .form-message {
+            p {
+                width: 100%;
+                text-align: center;
+                color: red;
+            }
+        }
+        .form-submit{
+            text-align: center;
+            background-color: var(--sub-color);
+            padding: 6px 0;
+            margin-top: 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+<main class="user">
+    <div class="user-wrapper">
+        <div class="userboard">
+            <form method="POST" id="form-edit" action="/point/{{subject._id}}/{{user.userId}}?_method=PUT">
+                <div class="form-group">
+                    <label for="MMH">Mã Môn Học:</label>
+                    <input type="text" value="{{subject.MMH}}" class="form-control" id="MMH" name="MMH" spellcheck="false" required="true">
+                </div>
+                <button class="form-submit" type="submit">Lưu</button>  
+            </form>
+        </div>
+    </div>
+</main>

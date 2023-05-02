@@ -1,0 +1,43 @@
+{
+  "name": "scoring-software-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --inspect src/index.js",
+    "scss": "sass src/resources/scss/app.scss src/public/css/app.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thong24506/scoring-software-node.git"
+  },
+  "keywords": [
+    "scoring-software-node"
+  ],
+  "author": "Nguyen Dinh Thong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thong24506/scoring-software-node/issues"
+  },
+  "homepage": "https://github.com/thong24506/scoring-software-node#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^7.0.4",
+    "mongoose-slug-generator": "^1.0.4"
+  },
+  "devDependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "express-handlebars": "^7.0.7",
+    "express-validator": "^7.0.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.22",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "prettier": "^2.8.7",
+    "sass": "^1.62.0"
+  }
+}

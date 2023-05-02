@@ -1,0 +1,74 @@
+{{>header}}
+<main class="create">
+    <form method="POST" id="form-create">
+        <div class="form-group">
+            <label for="HK">Học kỳ:</label>
+            <input type="number" class="form-control" id="HK" name="HK" spellcheck="false" required="true">
+        </div>
+        <div class="form-group">
+            <label for="MMH">Mã Môn Học:</label>
+            <input type="text" class="form-control" id="MMH" name="MMH" spellcheck="false" required="true">
+        </div>
+        <div class="form-group">
+            <label for="TMH">Tên môn học:</label>
+            <input type="text" class="form-control" id="TMH" name="TMH" spellcheck="false" required="true">
+        </div>
+        <div class="form-group">
+            <label for="TC">Số tín chỉ:</label>
+            <input type="number" class="form-control" id="TC" name="TC" spellcheck="false" required="true">
+        </div>
+        <div class="form-group">
+            <label for="KT">Hệ số điểm quá trình:</label>
+            <input type="number" class="form-control" id="KT" name="KT" spellcheck="false" required="true">
+        </div>
+        <div class="form-group">
+            <label for="THI">Hệ số điểm kết thúc học phần:</label><br>
+            <input type="number" class="form-control" id="THI" name="THI" spellcheck="false" required="true">
+        </div>
+        <div class="form-group">
+            <label for="KTRA">Điểm quá trình:</label><br>
+            <input type="number" class="form-control" id="KTRA" name="KTRA" spellcheck="false" required="true">
+        </div>
+        <div class="form-group">
+            <label for="THIL1">Điểm kết thúc học phần:</label><br>
+            <input type="number" class="form-control" id="THIL1" name="THIL1" spellcheck="false" required="true">
+        </div>
+        <div class="form-group form-message">
+            <p></p>
+        </div>
+        <div class="form-submit" userId="{{user.userId}}">Thêm môn</div>
+    </form>
+</main>
+{{>footer}}
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        const form = document.querySelector('#form-create');
+        const btnCreate = document.querySelector('.form-submit');
+        const userId = btnCreate.getAttribute('userId');
+        const inputs = document.querySelectorAll('.form-control');
+        form.action = '/point/store/' + userId + '?_method=PUT';
+        function submitForm() {
+            let checkForm = true;
+            for(const input of inputs) {
+                if(input.value === '') checkForm = false;
+            }
+            if(checkForm) {
+                form.submit()
+            }
+            else {
+                document.querySelector('.form-message p').innerText = 'Vui lòng nhập đầy đủ thông tin';
+            }
+        }
+        document.onkeydown = function(e) {
+            if(e.key === 'Enter') {
+                submitForm()
+            }
+        }
+        btnCreate.onclick = function() {
+            submitForm()
+        }
+    })
+</script>
